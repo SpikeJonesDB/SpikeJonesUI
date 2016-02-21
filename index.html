@@ -6,7 +6,18 @@
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
 </head>
 <body>
-    {{"Hello Angular"}}
+    <div ng-controller="SearchController as search">
+        <h2>{{search.searchdata.name}}</h2>
+        <p>{{search.searchdata.artist}}</p>
+        <p>{{search.searchdata.guests}}</p>
+        <p>{{search.searchdata.year}}</p>
+        <p>{{search.searchdata.label}}</p>
+        <p>{{search.searchdata.recordNumber}}</p>
+        <h3>{{search.searchdata.tracks.title}}</h3>
+        <p>{{search.searchdata.tracks.guests}}</p>
+        <p>{{search.searchdata.tracks.lyrics}}</p>
+    
+    </div>
 
     <script type="text/javascript" src="lib/js/angular.min.js"></script>
     <script type="text/javascript" src="lib/js/app.js"></script>
