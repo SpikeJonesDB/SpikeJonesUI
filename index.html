@@ -1,25 +1,29 @@
 <!doctype html>
 <html ng-app="search">
+
 <head>
     <meta charset="UTF-8">
     <title>Basic Angular</title>
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
 </head>
+
 <body>
     <div ng-controller="SearchController as search">
-        <h2>{{search.searchdata.name}}</h2>
-        <p>{{search.searchdata.artist}}</p>
-        <p>{{search.searchdata.guests}}</p>
-        <p>{{search.searchdata.year}}</p>
-        <p>{{search.searchdata.label}}</p>
-        <p>{{search.searchdata.recordNumber}}</p>
-        <h3>{{search.searchdata.tracks.title}}</h3>
-        <p>{{search.searchdata.tracks.guests}}</p>
-        <p>{{search.searchdata.tracks.lyrics}}</p>
-    
+        <div ng-repeat="collection in search.collections">
+            <h2>{{collection.name}}</h2>
+            <p>{{collection.artist}}</p>
+            <p ng-repeat="guest in collection.guests">{{guest.name}}</p>
+            <p>{{collection.year}}</p>
+            <p>{{collection.label}}</p>
+            <p>{{collection.recordNumber}}</p>
+            <h3>{{collection.tracks.title}}</h3>
+            <p>{{collection.tracks.guests}}</p>
+            <p>{{collection.tracks.lyrics}}</p>
+        </div>
     </div>
 
     <script type="text/javascript" src="lib/js/angular.min.js"></script>
     <script type="text/javascript" src="lib/js/app.js"></script>
 </body>
+
 </html>
