@@ -9,7 +9,8 @@
 
 <body>
     <div ng-controller="SearchController as search">
-        <div ng-repeat="collection in search.collections">
+        <p>Search: <input ng-model="query"></p>
+        <div ng-repeat="collection in search.collections | filter:query">
             <h2>{{collection.name}}</h2>
             <img ng-src="{{collection.art}}" ng-show="collection.art.length" /> 
             <img src="placeholder.jpg" alt="placeholder" ng-show="!collection.art.length" />
