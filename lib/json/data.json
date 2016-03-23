@@ -1,0 +1,45 @@
+[
+  {
+    "_id":"56e79bd069a28b19117ce33b",
+    "type":"Album",
+    "name":"Testing Response",
+    "artist":"Test",
+    "guests":"Guest Artist 1, Guest Artist 2",
+    "year":1999,
+    "label":"Record Label 1",
+    "recordNumber":"Record Number 1",
+    "__v":0,
+    "tracks":[
+      {
+        "_id":"56e79bd769a28b19117ce33c",
+        "title":"Track 1",
+        "lyrics":"These are the optional lyrics to track 1\r\nThey have more than one line\r\nSo you can see what a line break looks like."
+      },{
+        "lyrics":"These are the optional lyrics to track 2",
+        "title":"Track 2",
+        "_id":"56e79bdd69a28b19117ce33e"
+      }
+    ]
+  },{
+    "_id":"56e79be869a28b19117ce33f",
+    "type":"Album",
+    "name":"Testing Response 2",
+    "artist":"Test",
+    "guests":"Guest Artist 1, Guest Artist 2",
+    "year":0,
+    "label":"Record Label 2",
+    "recordNumber":"Record Number 2",
+    "__v":0,
+    "tracks":[
+      {
+        "_id":"56e79bf369a28b19117ce340",
+        "title":"Test 1",
+        "lyrics":"These are the lyrics to test 1"
+      },{
+        "lyrics":"",
+        "title":"Test 2",
+        "_id":"56e79bfb69a28b19117ce342"
+      }
+    ]
+  }
+]
