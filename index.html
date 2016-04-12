@@ -17,24 +17,31 @@
             <input ng-model="query">
         </p>
         <div ng-repeat="collection in search.collections | filter:query">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="modalTrigger" data-toggle="modal" data-target="#modal-{{$index}}">
-                <h2>{{collection.name}}</h2>
-                <img ng-src="{{collection.art}}" ng-show="collection.art.length" />
+                <img ng-src="{{collection._id + '.jpg'}}" ng-show="collection.art.length" />
                 <img src="placeholder.jpg" alt="placeholder" ng-show="!collection.art.length" />
-                
+                <p>{{collection.name}}</p>
+            </div>
             </div>
             <div class="modal fade" id="{{'modal-'+$index}}">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <p>{{collection.artist}}</p>
-                        <p ng-repeat="guest in collection.guests">{{guest.name}}</p>
-                        <p>{{collection.year}}</p>
-                        <p>{{collection.label}}</p>
-                        <p>{{collection.recordNumber}}</p>
-                        <h3>{{collection.tracks.title}}</h3>
-                        <p>{{collection.tracks.guests}}</p>
-                        <p>{{collection.tracks.lyrics}}</p>
-                        <a ng-href="{{collection.mp3}}">link</a>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h2>{{collection.name}}</h2>
+                                <p class="col-xs-12">Artist: {{collection.artist}}</p>
+                                <p class="col-xs-12">Guest Artists: {{collection.guests}}</p>
+                                <p class="col-xs-12 col-sm-3">Year Released: {{collection.year}}</p>
+                                <p col-xs-12 col-sm-6>Record Label: {{collection.label}}</p>
+                                <p class="col-xs-12 col-md-3">Record Number: {{collection.recordNumber}}</p>
+                                <div class="col-xs-12" ng-repeat="track in collection.tracks">
+                                    <h3>{{track.title}}</h3>
+                                    <p>{{track.lyrics}}</p>
+                                    <p><a ng-href="{{collection._id + '.mp3'}}">Download {{track.title}}</a></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div> 
