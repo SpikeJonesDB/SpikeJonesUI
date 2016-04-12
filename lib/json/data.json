@@ -34,11 +34,53 @@
       {
         "_id":"56e79bf369a28b19117ce340",
         "title":"Test 1",
-        "lyrics":"These are the lyrics to test 1"
+        "lyrics":"These are the lyrics to test 2"
       },{
         "lyrics":"",
         "title":"Test 2",
         "_id":"56e79bfb69a28b19117ce342"
+      }
+    ]
+  },{
+    "_id":"56e79be869a28b19117ce33g",
+    "type":"Album",
+    "name":"Testing Response 3",
+    "artist":"Test",
+    "guests":"Guest Artist 1, Guest Artist 2",
+    "year":0,
+    "label":"Record Label 2",
+    "recordNumber":"Record Number 2",
+    "__v":0,
+    "tracks":[
+      {
+        "_id":"56e79bf369a28b19117ce341",
+        "title":"Test 1",
+        "lyrics":"These are the lyrics to test 3"
+      },{
+        "lyrics":"",
+        "title":"Test 2",
+        "_id":"56e79bfb69a28b19117ce343"
+      }
+    ]
+  },{
+    "_id":"56e79be869a28b19117ce33h",
+    "type":"Album",
+    "name":"Testing Response 4",
+    "artist":"Test",
+    "guests":"Guest Artist 1, Guest Artist 2",
+    "year":0,
+    "label":"Record Label 2",
+    "recordNumber":"Record Number 2",
+    "__v":0,
+    "tracks":[
+      {
+        "_id":"56e79bf369a28b19117ce342",
+        "title":"Test 1",
+        "lyrics":"These are the lyrics to test 4"
+      },{
+        "lyrics":"",
+        "title":"Test 2",
+        "_id":"56e79bfb69a28b19117ce346"
       }
     ]
   }
