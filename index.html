@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Basic Angular</title>
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="lib/css/style.css" />
     <script src="http://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="lib/js/modal.js"></script>
     
@@ -13,15 +14,14 @@
 
 <body>
     <div ng-controller="SearchController as search">
-        <p>Search:
+        <p class="search">Search:
             <input ng-model="query">
         </p>
         <div ng-repeat="collection in search.collections | filter:query">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="modalTrigger" data-toggle="modal" data-target="#modal-{{$index}}">
-                <img ng-src="{{collection._id + '.jpg'}}" ng-show="collection.art.length" />
-                <img src="placeholder.jpg" alt="placeholder" ng-show="!collection.art.length" />
-                <p>{{collection.name}}</p>
+                <img ng-src="{{'http://spikejones.tc.uvu.edu/archive/images/' + collection._id + '.jpeg'}}" />
+                <p class="orange">{{collection.name}}</p>
             </div>
             </div>
             <div class="modal fade" id="{{'modal-'+$index}}">
@@ -30,15 +30,15 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <h2>{{collection.name}}</h2>
-                                <p class="col-xs-12">Artist: {{collection.artist}}</p>
-                                <p class="col-xs-12">Guest Artists: {{collection.guests}}</p>
-                                <p class="col-xs-12 col-sm-3">Year Released: {{collection.year}}</p>
-                                <p col-xs-12 col-sm-6>Record Label: {{collection.label}}</p>
-                                <p class="col-xs-12 col-md-3">Record Number: {{collection.recordNumber}}</p>
+                                <p class="col-xs-12"><span class="orange">Artist:</span> {{collection.artist}}</p>
+                                <p class="col-xs-12"><span class="orange">Guest Artists:</span> {{collection.guests}}</p>
+                                <p class="col-xs-12 col-sm-4"><span class="orange">Year Released:</span><br />{{collection.year}}</p>
+                                <p class="col-xs-12 col-sm-4"><span class="orange">Record Label:</span><br />{{collection.label}}</p>
+                                <p class="col-xs-12 col-sm-4"><span class="orange">Record Number:</span><br />{{collection.recordNumber}}</p>
                                 <div class="col-xs-12" ng-repeat="track in collection.tracks">
-                                    <h3>{{track.title}}</h3>
+                                    <h3 class="orange">{{track.title}}</h3>
                                     <p>{{track.lyrics}}</p>
-                                    <p><a ng-href="{{collection._id + '.mp3'}}">Download {{track.title}}</a></p>
+                                    <p><a ng-href="{{'http://spikejones.tc.uvu.edu/archive/music/' + collection._id + '/' + track._id + '.mp3'}}" target="_blank">Listen to  {{track.title}}</a></p>
                                 </div>
                             </div>
                         </div>
@@ -57,6 +57,8 @@
             });
         });
     </script>
+        <script type="text/javascript" src="lib/js/iframeresizer.contentwindow.min.js"></script>
+
 </body>
 
 </html>
