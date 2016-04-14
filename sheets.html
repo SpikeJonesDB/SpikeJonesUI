@@ -17,11 +17,11 @@
         <p class="search">Search:
             <input ng-model="query">
         </p>
-        <div ng-repeat="collection in search.collections | filter:query">
+        <div ng-repeat="sheet in search.sheets | filter:query">
             <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
             <div class="modalTrigger" data-toggle="modal" data-target="#modal-{{$index}}">
-                <img ng-src="{{'http://spikejones.tc.uvu.edu/archive/images/' + collection._id + '.jpeg'}}" />
-                <p class="orange">{{collection.name}}</p>
+                <img ng-src="{{'http://spikejones.tc.uvu.edu/archive/sheets/' + sheet._id + '.jpeg'}}" />
+                <p class="orange">{{sheet.title}}</p>
             </div>
             </div>
             <div class="modal fade" id="{{'modal-'+$index}}">
@@ -29,17 +29,10 @@
                     <div class="modal-content">
                         <div class="row">
                             <div class="col-xs-12">
-                                <h2>{{collection.name}}</h2>
-                                <p class="col-xs-12"><span class="orange">Artist:</span> {{collection.artist}}</p>
-                                <p class="col-xs-12"><span class="orange">Guest Artists:</span> {{collection.guests}}</p>
-                                <p class="col-xs-12 col-sm-4"><span class="orange">Year Released:</span><br />{{collection.year}}</p>
-                                <p class="col-xs-12 col-sm-4"><span class="orange">Record Label:</span><br />{{collection.label}}</p>
-                                <p class="col-xs-12 col-sm-4"><span class="orange">Record Number:</span><br />{{collection.recordNumber}}</p>
-                                <div class="col-xs-12" ng-repeat="track in collection.tracks">
-                                    <h3 class="orange">{{track.title}}</h3>
-                                    <p>{{track.lyrics}}</p>
-                                    <p><a ng-href="{{'http://spikejones.tc.uvu.edu/archive/music/' + collection._id + '/' + track._id + '.mp3'}}" target="_blank">Listen to  {{track.title}}</a></p>
-                                </div>
+                                <h2>{{sheet.title}}</h2>
+                                <img class="col-xs-12" ng-src="{{'http://spikejones.tc.uvu.edu/archive/sheets/' + sheet._id + '.jpeg'}}" />
+                                <p class="col-xs-12"><span class="orange">Year Composed:</span>{{sheet.year}}</p>
+                                <p class="col-xs-12"><span class="orange">Download: </span><a ng-href="{{'http://spikejones.tc.uvu.edu/archive/sheets/' + sheet._id + '.pdf'}}">{{sheet.title}} sheet music</a></p>
                             </div>
                         </div>
                     </div>
