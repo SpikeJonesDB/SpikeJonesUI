@@ -50,3 +50,14 @@ p.search {
     color: #e3850a;
     font-family: 'Libre Baskerville', serif;
 }
+
+.results {
+    position: relative;
+    overflow-y: auto;
+    max-height: 533px;
+}
+
+.modal-dialog {
+    position: fixed;
+    width: 100%;
+}
