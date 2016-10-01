@@ -53,11 +53,15 @@ p.search {
 
 .results {
     position: relative;
-    overflow-y: auto;
-    max-height: 533px;
 }
 
-.modal-dialog {
-    position: fixed;
-    width: 100%;
+.menu-item-has-children:hover ul {
+    visibility: visible !important;
+    display: block !important;
+}
+
+@media (min-width: 768px) {
+    .results .ng-scope:nth-of-type(odd) {
+        clear: both;
+    }
 }
